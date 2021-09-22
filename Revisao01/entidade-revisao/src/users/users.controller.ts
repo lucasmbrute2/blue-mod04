@@ -1,4 +1,4 @@
-import { Body, Controller, Get, NotFoundException, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, NotFoundException, Param, Post, Put } from '@nestjs/common';
 import { Users } from './Users';
 import { UsersService } from './users.service';
 
@@ -21,5 +21,14 @@ export class UsersController {
     @Post()
     create(@Body() user: Users) {
         return this.usersService.create(user)
+
+    }
+    @Put(':id')
+    update(@Body() user: Users, @Param() params) {
+        return this.usersService.update(+params.id, user)
+    }
+    @Delete(':id')
+    delete(@Param() params) {
+        return this.usersService.delete(+params.id)
     }
 }

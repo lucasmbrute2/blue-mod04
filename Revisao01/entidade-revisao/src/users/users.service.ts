@@ -33,13 +33,30 @@ export class UsersService {
         }
         return user
     }
-    create(UserDto: UsersDto) {
+    create(UsersDto: UsersDto) {
         const id = this.eachUser.length + 1;
         const user: Users = {
             id,
-            ...UserDto,
+            ...UsersDto,
         }
         this.eachUser.push(user)
         return user
     }
+
+    update(id: number, usersDto: UsersDto) {
+        const index = this.eachUser.findIndex(usuario => usuario.id === id)
+        const user: Users = {
+            id,
+            ...usersDto,
+        }
+        this.eachUser[index] = user
+        return user;
+    }
+    delete(id: number) {
+        const index = this.eachUser.findIndex(usuario => usuario.id === id)
+        delete this.eachUser[index]
+        return true
+    }
+
 }
+
