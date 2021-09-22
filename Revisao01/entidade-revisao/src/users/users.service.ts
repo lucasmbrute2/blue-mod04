@@ -52,8 +52,12 @@ export class UsersService {
         this.eachUser[index] = user
         return user;
     }
-    delete(id: number) {
+    async delete(id: number) {
         const index = this.eachUser.findIndex(usuario => usuario.id === id)
+        const user = this.eachUser.find(usuario => usuario.id === id)
+        if (!user) {
+            throw Error("Usuário não encontrado")
+        }
         delete this.eachUser[index]
         return true
     }

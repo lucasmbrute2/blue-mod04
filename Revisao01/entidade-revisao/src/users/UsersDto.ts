@@ -1,5 +1,5 @@
-import { IsString } from "class-validator";
-import { IsNotEmpty } from "class-validator";
+import { IsString, IsNotEmpty } from "class-validator";
+
 
 export class UsersDto {
     @IsString({ message: "O texto da mensagem deve ser uma string" })

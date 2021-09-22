@@ -1,6 +1,7 @@
 import { Body, Controller, Delete, Get, NotFoundException, Param, Post, Put } from '@nestjs/common';
 import { Users } from './Users';
 import { UsersService } from './users.service';
+import { UsersDto } from './UsersDto';
 
 @Controller("users")
 export class UsersController {
@@ -19,7 +20,7 @@ export class UsersController {
     }
 
     @Post()
-    create(@Body() user: Users) {
+    create(@Body() user: UsersDto) {
         return this.usersService.create(user)
 
     }
@@ -29,6 +30,8 @@ export class UsersController {
     }
     @Delete(':id')
     delete(@Param() params) {
-        return this.usersService.delete(+params.id)
+        return this.usersService.delete(+params.id).catch(e => {
+            throw new NotFoundException(e.user)
+        })
     }
 }
