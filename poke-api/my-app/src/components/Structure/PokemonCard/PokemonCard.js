@@ -1,11 +1,12 @@
-const PokemonCard = ({ pokemon })=>{
-    return(
+function PokemonCard({ pokemon }) {
+    console.log(pokemon)
+    return (
         <div>
             {pokemon.name}
             <div>
-            <img src={pokemon.url} alt={pokemon.name}></img>
+                {/* <img src={pokemon.url} /> */}
             </div>
         </div>
-    )
+    );
 }
 export default PokemonCard;

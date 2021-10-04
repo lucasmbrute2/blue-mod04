@@ -1,12 +1,9 @@
-import { Api } from "../../../Api/Api";
+// import { Api } from "../../../Api/Api";
 
-const PokemonView =()=>{
+// const PokemonView =()=>{
     
-    const handleDelete = async()=>{
-        const response = await Api.
-    }
-    return(
-        <button onClick={handleDelete}>Excluir</button>
-    )
-}
-export default PokemonView;
+//     return(
+//         <button onClick={handleDelete}>Excluir</button>
+//     )
+// }
+// export default PokemonView;

@@ -2,24 +2,25 @@ import PokemonCard from "../PokemonCard/PokemonCard";
 import React, { useState, useEffect } from "react";
 import { Api } from "../../../Api/Api";
 
-const PokemonList = ()=>{
-    const [pokemon,setPokemon]= useState([])
-    useEffect(()=>{
-        getApi()
-    },[])
-    
-    const getApi = async ()=>{
+function PokemonList() {
+    const [pokemon, setPokemon] = useState([]);
+    useEffect(() => {
+        getApi();
+    }, []);
+
+    const getApi = async () => {
         const response = await Api.readAllUrl();
-        const data = await response.json()
-        const res = data.results;
-        setPokemon(res)
-    }
-    return(
+        const results = await response.json();
+
+        setPokemon(results);
+
+    };
+    return (
         <div>
-            {pokemon.map((eachPokemon,index)=>(
-                <PokemonCard pokemon={eachPokemon} key={eachPokemon._id}/>
+            {pokemon.map((eachPokemon, index) => (
+                <PokemonCard pokemon={eachPokemon} key={eachPokemon.id} />
             ))}
         </div>
-    )
+    );
 }
 export default PokemonList;

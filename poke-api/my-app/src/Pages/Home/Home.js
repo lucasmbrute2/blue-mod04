@@ -1,10 +1,10 @@
 import PokemonList from "../../components/Structure/PokemonList/PokemonList";
 
-const Home =()=>{
-    return(
+function Home() {
+    return (
         <div>
-            <PokemonList/>
+            <PokemonList />
         </div>
-    )
+    );
 }
 export default Home;
