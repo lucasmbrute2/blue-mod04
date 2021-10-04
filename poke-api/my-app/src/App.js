@@ -1,6 +1,7 @@
 import './App.css';
 import { Switch, Route } from "react-router-dom";
 import Home from './Pages/Home/Home';
+import Create from './Pages/Create/Create';
 // import PokemonView from './Pages/Home/PokemonView/PokemonView';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route path='/' exact={true} component={Home} />
+        <Route path='/create' exact={true} component={Create} />
         {/* <Route path="/view/:id" component= {PokemonView}/> */}
       </Switch>
     </div>
