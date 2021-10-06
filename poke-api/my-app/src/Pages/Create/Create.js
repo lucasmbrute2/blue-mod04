@@ -2,7 +2,9 @@ import React from 'react'
 
 export default function Create() {
     
-    const handleSubmit = (e)=>e.preventDefault();
+    const handleSubmit = (e)=>{
+        e.preventDefault()
+    }
     
     return (
         <div>

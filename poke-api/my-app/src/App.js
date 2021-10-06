@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path='/' exact={true} component={Home} />
-        <Route path='/create' exact={true} component={Create} />
+        <Route path='/user' exact={true} component={Home} />
+        <Route path='/user/create' exact={true} component={Create} />
         {/* <Route path="/view/:id" component= {PokemonView}/> */}
       </Switch>
     </div>
