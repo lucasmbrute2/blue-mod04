@@ -4,8 +4,22 @@ export default function Create() {
     
     const handleSubmit = (e)=>{
         e.preventDefault()
+        
+        const name = e.target.name.value
+        const lastName = e.target.lastName.value
+        const password = e.target.password.value
+        const text = e.target.email.value
+        const email = e.target.cpf.value
+
+        const payLoad = {
+            name,
+            lastName,
+            password,
+            text,
+            email
+        }
+        console.log(payLoad)
     }
-    
     return (
         <div>
             <form onSubmit={handleSubmit}>
