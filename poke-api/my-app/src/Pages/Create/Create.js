@@ -1,42 +1,50 @@
 import React from 'react'
+import { Api } from '../../Api/Api'
 
 export default function Create() {
     
-    const handleSubmit = (e)=>{
+    const handleSubmit = async (e)=>{
         e.preventDefault()
         
         const name = e.target.name.value
         const lastName = e.target.lastName.value
         const password = e.target.password.value
-        const text = e.target.email.value
-        const email = e.target.cpf.value
+        const email = e.target.email.value
+        const cpf = e.target.cpf.value
 
         const payLoad = {
             name,
             lastName,
             password,
-            text,
-            email
+            email,
+            cpf
         }
         console.log(payLoad)
+        const response = await Api.postUser(payLoad)
+        const data = await response
     }
+
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <label htmlFor='name'>Title: </label>
-                <br/>
-                <input type='text' name='name' id = 'name'></input>
-                <label htmlFor='lastName'></label> 
-                <br/>
+                <label htmlFor='name'>Name </label>
+                
+                <input name='name'></input>
+                
+                <label htmlFor='lastName'>Last name</label> 
+                
                 <input type='text' name='lastName' id='lastName'></input>
-                <label htmlFor='password'></label>
-                <br/>
+                
+                <label htmlFor='password'>Password</label>
+                
                 <input type='text' name='password' id='password'></input>
-                <label htmlFor='email'></label>
-                <br/>
-                <input type='text' name='email'id='email'></input>
-                <label htmlFor="cpf"></label>
-                <br/>
+                
+                <label htmlFor='email'>Email</label>
+                
+                <input type='text' name='email' id='email'></input>
+                
+                <label htmlFor="cpf">Cpf</label>
+                
                 <input type='text' name='cpf' id='cpf'></input>
                 
                 <input type='submit' value='add'></input>

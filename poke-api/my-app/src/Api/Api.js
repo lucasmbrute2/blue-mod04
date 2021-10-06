@@ -7,7 +7,7 @@ export const Api = {
     readById: (id)=> fetch(Api.baseUrl+"/"+id),
     
     //POST
-    postUrl: (id,body)=>fetch(Api.baseUrl, {
+    postUser: (body)=>fetch(Api.baseUrl, {
         method: 'POST',
         headers: new Headers({
             "content-type": "application/json"
