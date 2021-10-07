@@ -11,13 +11,21 @@ export default function Create() {
         const password = e.target.password.value
         const email = e.target.email.value
         const cpf = e.target.cpf.value
-
+        const profileTitle = e.target.profileTitle.value
+        const profileImg = e.target.profile.value
+        
         const payLoad = {
             name,
             lastName,
             password,
             email,
-            cpf
+            cpf,
+            profile: [
+                {
+                    title: profileTitle,
+                    image: profileImg
+                }
+            ]
         }
         console.log(payLoad)
         const response = await Api.postUser(payLoad)
@@ -47,6 +55,11 @@ export default function Create() {
                 
                 <input type='text' name='cpf' id='cpf'></input>
                 
+                <label htmlFor='profileTitle'>Profile</label>
+                <input name='profileTitle' type='text' id='profileTitle'></input>
+                
+                <label htmlFor='profileImg'></label>
+                <input name='profileImg' type='text' id='profileImg'></input>
                 <input type='submit' value='add'></input>
             </form>
 

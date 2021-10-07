@@ -12,6 +12,6 @@ export const Api = {
         headers: new Headers({
             "content-type": "application/json"
         }),
-        body: JSON.stringify(body)
+        body: JSON.stringify(body) //estamos transformando o body em JSON, pois ele vem em formato de Objeto.
     })
 }

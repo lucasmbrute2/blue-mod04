@@ -13,7 +13,7 @@ function PokemonList() {
         const results = await response.json();
 
         setPokemon(results);
-
+        console.log(results)
     };
     return (
         <div>

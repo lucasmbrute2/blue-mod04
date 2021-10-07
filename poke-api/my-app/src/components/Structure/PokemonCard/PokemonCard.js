@@ -4,7 +4,7 @@ function PokemonCard({ pokemon }) {
         <div>
             {pokemon.name}
             <div>
-                {/* <img src={pokemon.url} /> */}
+            {pokemon.lastName} 
             </div>
         </div>
     );
