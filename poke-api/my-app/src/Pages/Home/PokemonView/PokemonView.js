@@ -1,9 +1,9 @@
-// import { Api } from "../../../Api/Api";
-
-// const PokemonView =()=>{
-    
-//     return(
-//         <button onClick={handleDelete}>Excluir</button>
-//     )
-// }
-// export default PokemonView;
+const PokemonView =(props)=>{
+    const id = props.match.params.id
+    return(
+        <div>
+            View Product {id}
+        </div>
+    )
+}
+export default PokemonView;

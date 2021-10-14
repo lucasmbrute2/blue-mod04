@@ -1,7 +1,7 @@
 import React from 'react'
 import { Api } from '../../Api/Api'
 
-export default function Create() {
+export default function Create(props) {
     
     const handleSubmit = async (e)=>{
         e.preventDefault()
@@ -12,7 +12,7 @@ export default function Create() {
         const email = e.target.email.value
         const cpf = e.target.cpf.value
         const profileTitle = e.target.profileTitle.value
-        const profileImg = e.target.profile.value
+        const profileImg = e.target.profileImg.value
         
         const payLoad = {
             name,
@@ -29,7 +29,14 @@ export default function Create() {
         }
         console.log(payLoad)
         const response = await Api.postUser(payLoad)
-        const data = await response
+        const data = await response.json()
+        console.log(data)
+        
+        if(response.status===201){
+            const { id } = data
+            props.history.push(`/user/view/${id}`)
+            console.log(id)
+        }
     }
 
     return (

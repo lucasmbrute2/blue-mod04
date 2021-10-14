@@ -6,6 +6,7 @@ function PokemonCard({ pokemon }) {
             <div>
             {pokemon.lastName} 
             </div>
+            {pokemon.profile.map(profile => <p>{profile.title}</p>)}
         </div>
     );
 }

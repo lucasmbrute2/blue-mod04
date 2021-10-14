@@ -12,8 +12,9 @@ function PokemonList() {
         const response = await Api.readAllUrl();
         const results = await response.json();
 
+        
         setPokemon(results);
-        console.log(results)
+        
     };
     return (
         <div>
